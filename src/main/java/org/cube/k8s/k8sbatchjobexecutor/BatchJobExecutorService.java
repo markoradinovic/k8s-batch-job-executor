@@ -3,6 +3,7 @@ package org.cube.k8s.k8sbatchjobexecutor;
 import io.fabric8.kubernetes.api.model.Pod;
 import io.fabric8.kubernetes.api.model.PodList;
 import io.fabric8.kubernetes.api.model.batch.Job;
+import io.fabric8.kubernetes.client.ConfigBuilder;
 import io.fabric8.kubernetes.client.DefaultKubernetesClient;
 import io.fabric8.kubernetes.client.KubernetesClient;
 import io.fabric8.kubernetes.client.Watch;
@@ -30,7 +31,6 @@ public class BatchJobExecutorService implements ApplicationRunner, BatchJobWatch
 
     private KubernetesClient client;
 
-    private BatchJobWatcher batchJobWatcher;
     private Watch watcher;
     private Path logPath = Paths.get("");
 
@@ -48,7 +48,9 @@ public class BatchJobExecutorService implements ApplicationRunner, BatchJobWatch
         LOG.info("Deleting Batch Job [" + job.getMetadata().getName() + "].");
         client.resource(job).delete();
         LOG.info("Batch Job [" + job.getMetadata().getName() + "] Deleted.");
+        LOG.info("Closing Watcher");
         watcher.close();
+        LOG.info("Watcher Closed");
         closeKubernetesClient();
         System.exit(statusCode);
     }

@@ -42,6 +42,5 @@ public class BatchJobWatcher implements Watcher<Job> {
 
     @Override
     public void onClose(KubernetesClientException cause) {
-        LOG.error(cause.getMessage(), cause);
     }
 }

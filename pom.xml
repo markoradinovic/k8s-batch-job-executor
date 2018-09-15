@@ -24,11 +24,6 @@
 		<java.version>1.8</java.version>
 	</properties>
 
-    <scm>
-        <connection>scm:git:git@github.com:markoradinovic/k8s-batch-job-executor.git</connection>
-        <tag>HEAD</tag>
-    </scm>
-
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -53,43 +48,12 @@
 		</dependency>
 	</dependencies>
 
-    <pluginRepositories>
-        <pluginRepository>
-            <snapshots>
-                <enabled>false</enabled>
-            </snapshots>
-            <id>bintray-cy6ergn0m-maven</id>
-            <name>bintray-plugins</name>
-            <url>http://dl.bintray.com/cy6ergn0m/maven</url>
-        </pluginRepository>
-    </pluginRepositories>
-
 	<build>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
-            <plugin>
-                <groupId>cy.github</groupId>
-                <artifactId>github-release-plugin</artifactId>
-                <version>0.5.1</version>
-
-                <configuration>
-                    <releaseTitle>${project.version}</releaseTitle>
-                    <tagName>${project.version}</tagName>
-                    <preRelease>true</preRelease>
-                </configuration>
-
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>gh-upload</goal>
-                        </goals>
-                        <phase>deploy</phase>
-                    </execution>
-                </executions>
-            </plugin>
 		</plugins>
 	</build>
 

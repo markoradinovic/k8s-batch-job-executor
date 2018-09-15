@@ -1,0 +1,8 @@
+spring:
+  main:
+    banner-mode: "off"
+  jmx:
+    enabled: false
+logging:
+  level:
+    org.springframework.context.annotation.AnnotationConfigApplicationContext: ERROR

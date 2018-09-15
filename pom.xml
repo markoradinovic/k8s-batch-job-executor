@@ -73,7 +73,7 @@
             <plugin>
                 <groupId>cy.github</groupId>
                 <artifactId>github-release-plugin</artifactId>
-                <version>LATEST</version>
+                <version>0.5.1</version>
 
                 <configuration>
                     <releaseTitle>${project.version}</releaseTitle>

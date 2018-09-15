@@ -11,8 +11,4 @@ import org.springframework.test.context.junit4.SpringRunner;
 @SpringBootTest
 public class K8sBatchJobExecutorApplicationTests {
 
-	@Test
-	public void contextLoads() {
-	}
-
 }

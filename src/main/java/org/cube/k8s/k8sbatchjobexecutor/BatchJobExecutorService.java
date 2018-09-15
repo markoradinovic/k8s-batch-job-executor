@@ -89,7 +89,7 @@ public class BatchJobExecutorService implements ApplicationRunner, BatchJobWatch
         }
     }
 
-    public void closeKubernetesClient() {
+    private void closeKubernetesClient() {
         LOG.info("Disconnecting from k8s cluster.");
         if (client != null) {
             client.close();

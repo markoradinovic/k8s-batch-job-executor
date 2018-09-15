@@ -8,6 +8,7 @@ import org.slf4j.LoggerFactory;
 
 import static org.cube.k8s.k8sbatchjobexecutor.Utils.nullSafeInt;
 
+@SuppressWarnings("WeakerAccess")
 public class BatchJobWatcher implements Watcher<Job> {
 
     private static final Logger LOG = LoggerFactory.getLogger(BatchJobWatcher.class);
